@@ -1,0 +1,6 @@
+Catering : True/False
+Dynamic fare : True/False
+Distance (km) : 900
+Duration (in minutes) : 120  
+Class : 1A,2A,2S,3A,CC,SL
+

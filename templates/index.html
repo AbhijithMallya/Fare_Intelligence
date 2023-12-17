@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>My Webpage</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+
+</head>
+<!-- img src="{{url_for('static',filename='dataset.png')}}" -->
+
+<body>
+
+    <!--********************************************************** -->
+    <!--*************************HEADING START********************-->
+    <!--********************************************************** -->
+
+    <div class="jumbotron jumbotron-fluid p-3 ">
+
+        <div class="row">
+            <div class="col-4 d-flex align-items-center ">
+                <img src="{{ url_for('static', filename='trainVector.jpg') }}" style="height: 150px;width: 500px;"
+                    class="img-fluid " alt="Train Image">
+            </div>
+            <div class="col-4">
+                <div class="container">
+                    <h1 class="display-3">IRTC Fare Predictor</h1>
+                    <p class="lead">A Flask application built on Gradient Regression Model</p>
+                </div>
+            </div>
+            <div class="col-4  ">
+                <img src="{{ url_for('static', filename='trainRight.png') }}" style="height: 150px;width: 500px;"
+                    class="img-fluid " alt="Train Image">
+            </div>
+
+        </div>
+
+
+
+        <!-- <div class="container" >
+
+            <h1 class="display-3">IRTC Fare Preditctor</h1>
+            <p class="lead">A Flask application built on Gradient Regression Model</p>
+        </div> -->
+    </div>
+    <!--********************************************************** -->
+    <!--*************************HEADING END***********************-->
+    <!--********************************************************** -->
+
+
+
+
+
+
+
+
+    <!--************************************************************* -->
+    <!--*************************CARD GROUP START********************-->
+    <!--*************************************************************-->
+
+    <div class="row  align-content-center" style="background-color: #2E5266;padding: 10%;">
+        <div class="col">
+            <div class="card  shadow-lg" style="width: 18rem; background-color: #6E8898;">
+                <img src="{{url_for('static',filename='dataset.png')}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Dataset</h5>
+                    <p class="card-text">The dataset is published by IRTC(Indian Railway Catering anf Tourism
+                        Corporation)</p>
+                    <a href="#" class="btn btn-primary container-fluid">Know More</a>
+                </div>
+            </div>
+
+        </div>
+        <div class="col">
+            <div class="card  shadow-lg" style="width: 18rem; background-color: #6E8898; ">
+                <img src="{{url_for('static',filename='problemStatement.png')}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Problem Statememt</h5>
+                    <p class="card-text">The main aim is to predict the Fare ticket based on the various factors such as
+                        duration , travel class etc.</p>
+                    <a href="#" class="btn btn-primary container-fluid">Details</a>
+                </div>
+            </div>
+
+        </div>
+        <div class="col">
+            <div class="card  shadow-lg" style="width: 18rem; background-color: #6E8898; ">
+                <img src="{{url_for('static',filename='research.png')}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Research Papers</h5>
+                    <p class="card-text">Research Papers on Regression models for predictions have been explored and
+                        analysed</p>
+                    <a href="#" class="btn btn-primary container-fluid">View Papers</a>
+                </div>
+            </div>
+
+        </div>
+        <div class="col">
+            <div class="card  shadow-lg" style="width: 18rem; background-color: #6E8898; ">
+                <img src="{{url_for('static',filename='demo.png')}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Live Demo</h5>
+                    <p class="card-text"> A quick demo of the project where the user can predict fare price based on
+                        input features</p>
+                    <a href="#demo" class="btn btn-success container-fluid">Run</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!--********************************************************** -->
+    <!--*************************CARD GROUP END********************-->
+    <!--********************************************************** -->
+
+
+
+
+
+
+
+
+    <!--********************************************************** -->
+    <!--****************************DEMO START******************** -->
+    <!--********************************************************** -->
+
+    <div id="demo">
+
+        <form class="row" method="post">
+            <div class="col-6" style="background-color:  rgb(116, 87, 35);display: inline;">
+                <label class="container-fluid" for="CateringService">Catering Service</label>
+                <select id="CateringService" name="CateringService" class="form-control form-control-lg">
+                    <option>--SELECT--</option>
+                    <option>True</option>
+                    <option>False</option>
+                </select>
+            </div>
+            <div class="col-6 ">
+                <label class="container-fluid" for="DynamicFare">Dynamic Fare</label>
+                <select id="DynamicFare" name="DynamicFare" class="form-control form-control-lg">
+                    <option>--SELECT--</option>
+                    <option>True</option>
+                    <option>False</option>
+                </select>
+            </div>
+            <div class="col-6">
+                <label class="container-fluid" for="distance">Distance</label>
+
+                <div class="input-group">
+                    <span class="input-group-text">Distance (Km)</span>
+                    <input id="distance" name="distance" type="text" class="form-control" placeholder="Enter the Distance">
+                </div>
+            </div>
+
+            <div class="col-6">
+                <label class="container-fluid" for="duration">Duration</label>
+
+                <div class="input-group">
+                    <span class="input-group-text">Duration (minutes)</span>
+                    <input id="duration" name="duration" type="text" class="form-control" placeholder="Enter the Distance">
+                </div>
+            </div>
+
+
+            <input type="radio" class="btn-check" name="options" id="1a" autocomplete="off" value="1a">
+            <label style="margin: 3% ;width: 180px; display: inline;" class="btn btn-secondary" for="1a">1A</label>
+
+            <input type="radio" class="btn-check" name="options" id="2a" autocomplete="off" value="2a">
+            <label style="margin: 3% ;width: 180px;display: inline;" class="btn btn-secondary" for="2a">2A</label>
+            <input type="radio" class="btn-check" name="options" id="2s" autocomplete="off" value="2s">
+            <label style="margin: 3% ;width: 180px; display: inline;" class="btn btn-secondary" for="2s">2S</label>
+
+            <input type="radio" class="btn-check" name="options" id="3a" autocomplete="off" value="3a">
+            <label style="margin: 3% ;width: 180px;display: inline;" class="btn btn-secondary" for="3a">3A</label>
+            <input type="radio" class="btn-check" name="options" id="cc" autocomplete="off" value="cc">
+            <label style="margin: 3% ;width: 180px; display: inline;" class="btn btn-secondary" for="cc">CC</label>
+
+            <input type="radio" class="btn-check" name="options" id="sl" autocomplete="off" value="sl">
+            <label style="margin: 3% ;width: 180px;display: inline;" class="btn btn-secondary" for="sl">SL</label>
+
+            <button type="submit"  class="btn btn-primary">SUBMIT</button>
+            <span class="alert"> The expected Fare :: {{span}} </span>
+        </form>
+    </div>
+
+
+    <!--********************************************************** -->
+    <!--****************************DEMO END********************** -->
+    <!--********************************************************** -->
+
+
+
+</body>
+
+</html>

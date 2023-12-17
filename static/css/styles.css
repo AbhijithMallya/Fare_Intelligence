@@ -1,0 +1,36 @@
+
+.card-title {  border-radius: 5px;
+     background-color: #D3D0CB;
+    text-align: center;}
+
+.card-text { color: white; }
+
+.jumbotron-fluid{
+    background-color: #D3D0CB;
+    text-align: center ;
+    font-family:  "Times New Roman", Times, serif;
+    background:"{{url_for('static',filename='trainTitle.png')}}" 
+}
+
+#demo { background-color: #D3D0CB;
+    padding: 5%;
+    }
+label{ 
+    padding: 20px;
+    text-align: center;
+    font-size: 40px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    background-color: black;
+    color: white;
+    display: inline-block;
+}
+/* option{
+    text-align: center;
+} */
+
+#demo .col-6{ padding: 20px; 
+    background-color:  rgb(116, 87, 35); display: inline;
+   
+}
+
