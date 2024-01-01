@@ -2,195 +2,582 @@
 <html lang="en">
 
 <head>
-    <title>My Webpage</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
-
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Fare Intelligence</title>
+    <!-- MDB icon -->
+    <link rel="icon" href="https://i.pngimg.me/thumb/f/720/m2i8K9G6N4d3K9Z5.jpg" type="image/x-icon" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" />
+    <!-- Google Fonts Roboto -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
+    <!-- MDB -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/mdb.min.css' )}}">
 </head>
-<!-- img src="{{url_for('static',filename='dataset.png')}}" -->
 
 <body>
+    <!-- Start your project here-->
 
-    <!--********************************************************** -->
-    <!--*************************HEADING START********************-->
-    <!--********************************************************** -->
-
-    <div class="jumbotron jumbotron-fluid p-3 ">
-
-        <div class="row">
-            <div class="col-4 d-flex align-items-center ">
-                <img src="{{ url_for('static', filename='trainVector.jpg') }}" style="height: 150px;width: 500px;"
-                    class="img-fluid " alt="Train Image">
+    <div id="preview" class="preview">
+        <div style="display: none;"></div>
+        <div>
+            <div data-draggable="true" style="position: relative;"><!----><!---->
+                <section draggable="false" class="overflow-hidden pt-0" data-v-271253ee="">
+                    <section class="" style="padding-bottom: 1px;"> <!-- Navbar -->
+                        <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-2"> <!-- Container wrapper -->
+                            <div class="container-fluid"> <!-- Navbar brand --> <a class="navbar-brand me-2"
+                                    href="https://www.irctc.co.in/nget/train-search" target="_blank"> <img
+                                        src="https://logos-world.net/wp-content/uploads/2020/11/IRCTC-Logo.png"
+                                        height="40" width="90" alt="Logo" loading="lazy" style="margin-top: -1px"
+                                        aria-controls="#picker-editor"> </a>
+                                <!-- Toggle button --> <button class="navbar-toggler" type="button"
+                                    data-mdb-toggle="collapse" data-mdb-target="#navbarButtonsExample"
+                                    aria-controls="navbarButtonsExample" aria-expanded="false"
+                                    aria-label="Toggle navigation"> <i class="fas fa-bars"></i> </button>
+                                <!-- Collapsible wrapper -->
+                                <div class="collapse navbar-collapse" id="navbarButtonsExample"> <!-- Left links -->
+                                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                        <li class="nav-item"> <a class="nav-link" href="#"
+                                                aria-controls="#picker-editor">PPT</a> </li>
+                                        <li class="nav-item"> <a class="nav-link" href="#team"
+                                                aria-controls="#picker-editor">Team</a> </li>
+                                        <li class="nav-item"> <a class="nav-link"
+                                                href="https://drive.google.com/drive/folders/15iIMweuASsajEPMx6Xz5Fvf9W8eojD-y?usp=sharing"
+                                                aria-controls="#picker-editor">Reference Papers</a> </li>
+                                    </ul> <!-- Left links -->
+                                    <div class="d-flex align-items-center"> <button type="button"
+                                            class="btn   btn-primary btn-rounded me-3"
+                                            aria-controls="#picker-editor">Download Report<i
+                                                class="fas fa-file-download p-1 ps-2"></i></button> </div>
+                                </div> <!-- Collapsible wrapper -->
+                            </div> <!-- Container wrapper -->
+                        </nav> <!-- Navbar -->
+                    </section>
+                </section><!---->
             </div>
-            <div class="col-4">
-                <div class="container">
-                    <h1 class="display-3">IRTC Fare Predictor</h1>
-                    <p class="lead">A Flask application built on Gradient Regression Model</p>
-                </div>
+            <div data-draggable="true" style="position: relative;" draggable="false" class=""><!----><!---->
+                <section draggable="false" class="overflow-hidden pt-0" data-v-271253ee="">
+                    <section class="mb-10"> <!-- Background image -->
+                        <div class="p-5 text-center bg-image"
+                            style="background-image: url(&quot;https://images.unsplash.com/photo-1592844002373-a55ecd7af140?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5NjI0M3wwfDF8c2VhcmNofDR8fEluZGlhbiUyMHJhaWx3YXl8ZW58MHx8fHwxNzA0MTEwMjUzfDA&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080&quot;); height: 500px; background-size: cover; background-position: 50% 50%;"
+                            aria-controls="#picker-editor"></div> <!-- Background image -->
+                        <div class="container">
+                            <div class="card mx-4 mx-md-5 text-center shadow-5-strong"
+                                style=" margin-top: -170px; background: hsla(0, 0%, 100%, 0.7); backdrop-filter: blur(30px); ">
+                                <div class="card-body px-4 py-5 px-md-5">
+                                    <h1 class="display-3 fw-bold ls-tight mb-4"> <span>Fare Intelligence&nbsp;</span>
+                                        <br> <span class="text-primary">at your Fingertips</span> </h1> <a
+                                        class="btn btn-primary btn-lg py-3 px-5 mb-2 mb-md-0 me-md-2" href="#demo"
+                                        role="button" aria-controls="#picker-editor" draggable="false"
+                                        style="min-width: auto;">Live demo</a> <a
+                                        class="btn btn-link btn-lg py-3 px-5 mb-2 mb-md-0 ripple-surface-primary"
+                                        data-ripple-color="primary" href="#goal" role="button"
+                                        aria-controls="#picker-editor" draggable="false"
+                                        style="min-width: auto;">Objectives</a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </section><!---->
             </div>
-            <div class="col-4  ">
-                <img src="{{ url_for('static', filename='trainRight.png') }}" style="height: 150px;width: 500px;"
-                    class="img-fluid " alt="Train Image">
+            <div data-draggable="true" style="position: relative;"><!----><!---->
+                <section draggable="false" class="container pt-5" data-v-271253ee="">
+                    <section class="mb-10 text-center text-md-start">
+                        <div class="row align-items-center">
+                            <div class="col-md-6 mb-4 mb-md-0">
+                                <h2 class="mb-4 display-3 fw-bold ls-tight"> <span>PROBLEM</span> <br> <span
+                                        class="text-primary">STATEMENT</span> </h2>
+                            </div>
+                            <div class="col-md-6 mb-4 mb-md-0">
+                                <p class="text-uppercase text-primary fw-bold">OVERVIEW</p>
+                                <p class="text-muted lead">Predicting railway ticket fares accurately is a complex
+                                    challenge influenced
+                                    by factors like travel duration, class preferences, catering services, and distance.
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+                </section><!---->
             </div>
+            <div data-draggable="true" class="" style="position: relative;" draggable="false"><!----><!---->
+                <section draggable="false" class="container pt-5" data-v-271253ee="">
+                    <section class="mb-10">
+                        <style>
+                            @media (min-width: 992px) {
+                                .cascading-right {
+                                    margin-right: -50px;
+                                }
 
+                                .rotate-lg-6 {
+                                    transform: rotate(6deg);
+                                }
+                            }
+                        </style> <!-- Jumbotron -->
+                        <div id="goal" class="container py-4">
+                            <div class="row g-0 align-items-center">
+                                <div class="col-lg-6 mb-5 mb-lg-0">
+                                    <div class="card cascading-right"
+                                        style=" background: hsla(0, 0%, 100%, 0.55); backdrop-filter: blur(30px); z-index: 1; ">
+                                        <div class="card-body py-5 px-md-5 shadow-5">
+                                            <h2 class="fw-bold mb-4">Goals and Objectives</h2>
+                                            <p class="text-muted mb-4">Leverage the IRCTC dataset and Gradient Boosting
+                                                Regression to develop
+                                                a precise fare prediction model, providing passengers with transparent
+                                                and reliable estimates
+                                                for enhanced travel planning</p>
+                                            <div class="row">
+                                                <div class="col-lg-4 mb-2">
+                                                    <p> <i
+                                                            class="fas fa-check text-dark me-2"></i><span>Responsive&nbsp;</span>
+                                                    </p>
+                                                </div>
+                                                <div class="col-lg-4 mb-2">
+                                                    <p> <i class="fas fa-check text-dark me-2"></i><span>Scalable</span>
+                                                    </p>
+                                                </div>
+                                                <div class="col-lg-4 mb-2">
+                                                    <p> <i class="fas fa-check text-dark me-2"></i><span>Forecast</span>
+                                                    </p>
+                                                </div>
+                                                <div class="col-lg-4 mb-2">
+                                                    <p><i class="fas fa-check text-dark me-2"></i><span>Refined</span>
+                                                    </p>
+                                                </div>
+                                                <div class="col-lg-4 mb-2">
+                                                    <p><i class="fas fa-check text-dark me-2"></i><span>Accurate</span>
+                                                    </p>
+                                                </div>
+                                                <div class="col-lg-4 mb-2">
+                                                    <p><i
+                                                            class="fas fa-check text-dark me-2"></i><span>Innovative</span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 mb-5 mb-lg-0"> <img
+                                        src="https://images.unsplash.com/photo-1685858874777-b87106319be7?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5NjI0M3wwfDF8c2VhcmNofDR8fEluZGlhbiUyMHJhaWx8ZW58MHx8fHwxNzA0MTEwMjUzfDA&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
+                                        class="w-100 rounded-4 shadow-4 rotate-lg-6" alt=""
+                                        aria-controls="#picker-editor" draggable="false"> </div>
+                            </div>
+                        </div> <!-- Jumbotron -->
+                    </section>
+                </section><!---->
+            </div>
+            <div data-draggable="true" class="" style="position: relative;" draggable="false"><!----><!---->
+                <section draggable="false" class="container pt-5" data-v-271253ee="">
+                    <section class="mb-10 text-center">
+                        <div class="d-flex justify-content-center">
+                            <div class="text-center" style="max-width: 700px">
+                                <h2 class="fw-bold mb-4 text-center"> <span class="me-2">About</span><u
+                                        class="text-primary">Dataset</u>
+                                </h2>
+                                <p class="text-muted mb-5">The primary source of this dataset is the Indian Railways
+                                    Catering and
+                                    Tourism Corporation (IRCTC) website during October-2023. Through web scraping
+                                    techniques, data was
+                                    collected, including public train schedules, pricing details, and availability
+                                    information.</p>
+                            </div>
+                        </div>
+                        <div class="row gx-lg-5">
+                            <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+                                <div class="p-3 bg-primary rounded-circle shadow-2-strong d-inline-block mb-4"> <i
+                                        class="fas fa-map-marker fa-lg text-white fa-fw"
+                                        aria-controls="#picker-editor"></i> </div>
+                                <h5 class="fw-bold mb-3">Distance</h5>
+                                <p class="text-muted mb-0">Chart your fare based on the journey's length.</p>
+                            </div>
+                            <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+                                <div class="p-3 bg-primary rounded-circle shadow-2-strong d-inline-block mb-4"> <i
+                                        class="fas fa-clock -alt fa-lg text-white fa-fw"
+                                        aria-controls="#picker-editor"></i> </div>
+                                <h5 class="fw-bold mb-3">Duration</h5>
+                                <p class="text-muted mb-0">Explore how travel time influences ticket pricing</p>
+                            </div>
+                            <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
+                                <div class="p-3 bg-primary rounded-circle shadow-2-strong d-inline-block mb-4"> <i
+                                        class="fas fa-train fa-lg text-white fa-fw" aria-controls="#picker-editor"></i>
+                                </div>
+                                <h5 class="fw-bold mb-3">Class</h5>
+                                <p class="text-muted mb-0">Uncover the impact of seat class on your fare</p>
+                            </div>
+                            <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
+                                <div class="p-3 bg-primary rounded-circle shadow-2-strong d-inline-block mb-4"> <i
+                                        class="fas fa-utensils fa-lg text-white fa-fw"
+                                        aria-controls="#picker-editor"></i> </div>
+                                <h5 class="fw-bold mb-3">Catering Service</h5>
+                                <p class="text-muted mb-0">See how onboard amenities shape ticket costs</p>
+                            </div>
+                        </div>
+                    </section>
+                </section><!---->
+            </div>
+            <div data-draggable="true" class="" style="position: relative;" draggable="false"><!----><!---->
+                <section draggable="false" class="container pt-5" data-v-271253ee="">
+                    <section class="mb-10">
+                        <h2 class="fw-bold mb-5 text-center">METHODOLOGY</h2>
+                        <div class="row gx-lg-5 align-items-center">
+                            <!-- <div class="col-lg-5 mb-5 mb-lg-0">
+                                <div class="bg-image rounded-5 shadow-5-strong"
+                                    style="background-image: url('/static/img/diagram.png'); height: 560px; background-size: cover; background-position: 50% 50%; background-color: rgba(0, 0, 0, 0);     transform: scale(0.8); overflow: hidden;  "
+                                    aria-controls="#picker-editor">
+                                    <div class="mask" style="background-color: rgba(0, 0, 0, 0.7)">
+                                        <div class="d-flex justify-content-center align-items-center h-100">
+                                            <div class="px-4 py-5 px-md-5 text-white text-center">
+                                                <h3 class="text-uppercase fw-bold mb-4"> <span></span> <u
+                                                        style="color: hsl(210, 12%, 80%)"></u>
+                                                </h3>
+                                                <p class="mb-0" style="color: hsl(210, 12%, 80%)"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> -->
+
+                            <div class="col-lg-5 mb-5 mb-lg-0">
+                                <div class="bg-image rounded-5 shadow-5-strong" style="overflow: hidden;">
+                                    <img src="/static/img/diagram.png" alt="Your Image" style="width: 100%; height: 600px; transform: scale(0.7);">
+                                </div>
+                            </div>
+                            
+
+
+
+                            <div class="col-lg-7 mb-4 mb-lg-0">
+                                <div class="d-flex align-items-start mb-5">
+                                    <div class="flex-shrink-0">
+                                        <div class="p-3 rounded-4 shadow-2-strong"
+                                            style="background-color: hsl(204, 30%, 20%)"> <i
+                                                class="fas fa-database fa-lg text-white fa-fw"
+                                                aria-controls="#picker-editor"></i> </div>
+                                    </div>
+                                    <div class="flex-grow-1 ms-4">
+                                        <p class="fw-bold mb-1">Dataset Processing</p>
+                                        <p class="text-muted mb-0">The dataset is cleaned and preprocessed and the key
+                                            factors analysing
+                                            price are taken into account. The dataset is splitted to train and test in
+                                            80 : 20 ratio.</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-start mb-5">
+                                    <div class="flex-shrink-0">
+                                        <div class="p-3 rounded-4 shadow-2-strong"
+                                            style="background-color: hsl(204, 30%, 20%)"> <i
+                                                class="fas fa-wrench fa-lg text-white fa-fw"
+                                                aria-controls="#picker-editor"></i> </div>
+                                    </div>
+                                    <div class="flex-grow-1 ms-4">
+                                        <p class="fw-bold mb-1">Model Training &amp; Exporting</p>
+                                        <p class="text-muted mb-0">Gradient Boosting Regerssion model is loaded from
+                                            sklearn library. The
+                                            model is trained and exported using the pickle module . The process is known
+                                            as Pickling
+                                            (serialization)</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-start mb-5">
+                                    <div class="flex-shrink-0">
+                                        <div class="p-3 rounded-4 shadow-2-strong"
+                                            style="background-color: hsl(204, 30%, 20%)"> <i
+                                                class="fas fa-check-circle fa-lg text-white fa-fw"
+                                                aria-controls="#picker-editor"></i> </div>
+                                    </div>
+                                    <div class="flex-grow-1 ms-4">
+                                        <p class="fw-bold mb-1">Evaluation &amp; Metrics</p>
+                                        <p class="text-muted mb-0">The R2 score is evaulted for measuring the model's
+                                            accuracy. We achived
+                                            an r2 score of 0.9775 compared to the traditional regression model which had
+                                            a score of 0.95.</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-start">
+                                    <div class="flex-shrink-0">
+                                        <div class="p-3 rounded-4 shadow-2-strong"
+                                            style="background-color: hsl(204, 30%, 20%)"> <i
+                                                class="fas fa-link fa-lg text-white fa-fw"
+                                                aria-controls="#picker-editor"></i> </div>
+                                    </div>
+                                    <div class="flex-grow-1 ms-4">
+                                        <p class="fw-bold mb-1">Integration</p>
+                                        <p id="demo" class="text-muted mb-0">The Frontend was built using Bootstrap and
+                                            handling the requests by Flask
+                                            framework. The post requests were sent to model by deserializing the earlier
+                                            saved model. The
+                                            Output is again sent to frontend</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </section><!---->
+            </div>
+            <div data-draggable="true" class="" style="position: relative;" draggable="false"><!----><!---->
+                <section draggable="false" class="container pt-5" data-v-271253ee="">
+                    <section class="mb-10 text-center text-lg-start">
+                        <div class="px-4 py-5 px-md-5" style="background-color: hsl(0, 0%, 96%)">
+                            <div class="row gx-lg-5 align-items-center">
+                                <div class="col-lg-6 mb-5 mb-lg-0">
+                                    <h2 class="my-5 display-5 fw-bold ls-tight"> <span>Live Demo</span> <br> <span
+                                            class="text-primary">Price Prediction</span> </h2>
+                                    <p style="color: hsl(217, 10%, 50.8%)">Experience the excitement of predicting
+                                        prices in real-time
+                                        with our live demo. Witness the precision and innovation of our platform at your
+                                        fingertips.</p>
+                                </div>
+                                <div class="col-lg-6 mb-5 mb-lg-0">
+
+
+                                    <!-- original Start -->
+
+
+                                    <!-- Original End -->
+
+
+                                    <!-- duplicate start -->
+
+                                    <div class="card">
+                                        <div class="card-body py-5 px-md-5">
+                                            <form method="post">
+                                                <div class="row">
+                                                    <div class="col-6">
+                                                        <label class="container-fluid" for="CateringService">Catering
+                                                            Service</label>
+                                                        <select id="CateringService" name="CateringService"
+                                                            class="form-control form-control-lg">
+                                                            <option>--SELECT--</option>
+                                                            <option>True</option>
+                                                            <option>False</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <label class="container-fluid" for="DynamicFare">Dynamic
+                                                            Fare</label>
+                                                        <select id="DynamicFare" name="DynamicFare"
+                                                            class="form-control form-control-lg">
+                                                            <option>--SELECT--</option>
+                                                            <option>True</option>
+                                                            <option>False</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-6"> <br>
+                                                        <div class="input-group">
+
+                                                            <input id="distance" name="distance" type="text"
+                                                                class="form-control"
+                                                                placeholder="Enter the Distance (km)">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6"><br>
+                                                        <div class="input-group">
+
+                                                            <input id="duration" name="duration" type="text"
+                                                                class="form-control"
+                                                                placeholder="Enter the Duration (min)">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row mt-3">
+                                                    <div class="col-2">
+                                                        <input type="radio" class="btn-check" name="options" id="1a"
+                                                            autocomplete="off" value="1a">
+                                                        <label class="btn btn-secondary" for="1a">1A</label>
+                                                    </div>
+                                                    <div class="col-2">
+                                                        <input type="radio" class="btn-check" name="options" id="2a"
+                                                            autocomplete="off" value="2a">
+                                                        <label class="btn btn-secondary" for="2a">2A</label>
+                                                    </div>
+                                                    <div class="col-2">
+                                                        <input type="radio" class="btn-check" name="options" id="2s"
+                                                            autocomplete="off" value="2s">
+                                                        <label class="btn btn-secondary" for="2s">2S</label>
+                                                    </div>
+                                                    <div class="col-2">
+                                                        <input type="radio" class="btn-check" name="options" id="3a"
+                                                            autocomplete="off" value="3a">
+                                                        <label class="btn btn-secondary" for="3a">3A</label>
+                                                    </div>
+                                                    <div class="col-2">
+                                                        <input type="radio" class="btn-check" name="options" id="cc"
+                                                            autocomplete="off" value="cc">
+                                                        <label class="btn btn-secondary" for="cc">CC</label>
+                                                    </div>
+                                                    <div class="col-2">
+                                                        <input type="radio" class="btn-check" name="options" id="sl"
+                                                            autocomplete="off" value="sl">
+                                                        <label class="btn btn-secondary" for="sl">SL</label>
+                                                    </div>
+                                                </div>
+                                                <br>
+
+                                                <button type="submit" class="btn btn-primary btn-block mb-4"
+                                                    aria-controls="#picker-editor">SUBMIT</button>
+                                                <p class="alert text-center  ">{{span}} </p>
+                                            </form>
+                                        </div>
+                                    </div>
+
+
+
+                                    <!-- Duplicate End -->
+
+
+                                </div>
+                            </div>
+                    </section>
+                </section><!---->
+            </div>
+            <div data-draggable="true" class="" style="position: relative;" draggable="false"><!----><!---->
+                <section draggable="false" class="container pt-5" data-v-271253ee="">
+                    <section class="mb-10 text-center text-md-start">
+                        <div class="row align-items-center">
+                            <div class="col-md-6 mb-4 mb-md-0">
+                                <h2 class="fw-bold mb-4"> <span>Software Requirements</span> <br> <u class="">Pioneering
+                                        the Railway
+                                        Revolution</u> </h2>
+                                <p class="text-muted mb-4">Discover the magic behind the scenes: our tech stack, the
+                                    engine driving
+                                    seamless railway predictions and user-friendly experiences.</p> <a
+                                    class="btn          btn-primary btn-lg btn-rounded mb-4" href="#" role="button"
+                                    aria-controls="#picker-editor" draggable="false" style="min-width: auto;">github
+                                    link</a>
+                            </div>
+                            <div class="col-md-6 mb-4 mb-md-0">
+                                <div class="row">
+                                    <div class="col-6 mb-5"> <img style="height: 90px; " src="{{ url_for('static', filename='img/bootstrap.svg' )}}"
+                                            class="img-fluid grayscale px-4 px-lg-5" alt=""
+                                            aria-controls="#picker-editor" draggable="false">
+                                    </div>
+                                    <div class="col-6 mb-5"> <img style="height: 90px; " src="{{ url_for('static', filename='img/flask.png' )}}"
+                                            class="img-fluid grayscale px-4 px-lg-5" alt="Amazon - logo"
+                                            aria-controls="#picker-editor" draggable="false"> </div>
+                                    <div class="col-6 mb-5"> <img style="height: 90px; " src="{{ url_for('static', filename='img/python.png' )}}"
+                                            class="img-fluid grayscale px-4 px-lg-5" alt="Nike - logo"
+                                            aria-controls="#picker-editor" draggable="false"> </div>
+                                    <div class="col-6 mb-5"> <img style="height: 90px; " src="{{ url_for('static', filename='img/html.png' )}}"
+                                            class="img-fluid grayscale px-4 px-lg-5" alt="Ikea - logo"
+                                            aria-controls="#picker-editor" draggable="false"> </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </section><!---->
+            </div>
+            <div id="team" data-draggable="true" class="" style="position: relative;" draggable="false"><!----><!---->
+                <section draggable="false" class="container pt-5" data-v-271253ee="">
+                    <section class="mb-10 text-center">
+                        <h2 class="fw-bold mb-10"><span>Meet the</span> <u class="text-primary">Team</u></h2>
+                        <div class="row gx-lg-5">
+                            <div class="col-lg-4 mb-10 mb-lg-0">
+                                <div class="card shadow-2-strong h-100">
+                                    <div class="d-flex justify-content-center" style="margin-top: -75px"> <img
+                                            src="{{ url_for('static', filename='img/guide.png' )}}" class="rounded-circle shadow-5-strong" alt=""
+                                            style="width: 150px; height: 150px;" aria-controls="#picker-editor"
+                                            draggable="false"> </div>
+                                    <div class="card-body">
+                                        <h5 class="fw-bold">Manjunath E C</h5>
+                                        <p class="text-muted">Assistant Professor , CSE(AI &amp; ML)</p>
+                                        <!-- <ul class="list-unstyled mb-0"> <a href="#!" class="px-1" draggable="false"> <i
+                          class="fab fa-github" aria-controls="#picker-editor"></i> </a> <a href="#!" class="px-1"
+                        draggable="false"> <i class="fab fa-twitter" aria-controls="#picker-editor"></i> </a> <a
+                        href="#!" class="px-1" draggable="false"> <i class="fab fa-linkedin-in"
+                          aria-controls="#picker-editor"></i> </a> </ul> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 mb-10 mb-lg-0">
+                                <div class="card shadow-2-strong h-100">
+                                    <div class="d-flex justify-content-center" style="margin-top: -75px"> <img
+                                            src="https://media.licdn.com/dms/image/D4D03AQEswELtht98iw/profile-displayphoto-shrink_800_800/0/1688644983085?e=1709769600&amp;v=beta&amp;t=IiaF1VUVo3Bs7MRqjDRqnHv2U32FoV10sopSsIKwW94"
+                                            class="rounded-circle shadow-5-strong" alt=""
+                                            style="width: 150px; height: 150px;" aria-controls="#picker-editor"
+                                            draggable="false"> </div>
+                                    <div class="card-body">
+                                        <h5 class="fw-bold">Abhijith Mallya</h5>
+                                        <p class="text-muted">4SF20CI002</p>
+                                        <ul class="list-unstyled mb-0"> <a href="https://github.com/AbhijithMallya/"
+                                                class="px-1" draggable="false"> <i class="fab fa-github    "
+                                                    aria-controls="#picker-editor"></i> </a> <a
+                                                href="https://www.instagram.com/abhijithmallya/" class="px-1"
+                                                draggable="false"> <i class="fab fa-instagram "
+                                                    aria-controls="#picker-editor"></i> </a> <a
+                                                href="https://www.linkedin.com/in/abhijith-mallya-98768b202/"
+                                                class="px-1" draggable="false"> <i class="fab fa-linkedin-in"
+                                                    aria-controls="#picker-editor"></i> </a> </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 mb-10 mb-lg-0">
+                                <div class="card shadow-2-strong h-100">
+                                    <div class="d-flex justify-content-center" style="margin-top: -75px"> <img
+                                            src="https://media.licdn.com/dms/image/D5603AQHuikxjjIDtQw/profile-displayphoto-shrink_200_200/0/1686766651830?e=1709769600&amp;v=beta&amp;t=5SXTFws4c2pf9cItaIi7ofjcEpWYLAteZoRh49RnPCE"
+                                            class="rounded-circle shadow-5-strong" alt=""
+                                            style="width: 150px; height: 150px;" aria-controls="#picker-editor"
+                                            draggable="false"> </div>
+                                    <div class="card-body">
+                                        <h5 class="fw-bold">Hithesh Shetty</h5>
+                                        <p class="text-muted">4SF20CI024</p>
+                                        <ul class="list-unstyled mb-0"> <a
+                                                href="https://www.linkedin.com/in/hithesh-shetty-a76716277/"
+                                                class="px-1" draggable="false"> <i class="fab fa-linkedin-in"
+                                                    aria-controls="#picker-editor"></i> </a> </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </section><!---->
+            </div>
         </div>
-
-
-
-        <!-- <div class="container" >
-
-            <h1 class="display-3">IRTC Fare Preditctor</h1>
-            <p class="lead">A Flask application built on Gradient Regression Model</p>
-        </div> -->
     </div>
-    <!--********************************************************** -->
-    <!--*************************HEADING END***********************-->
-    <!--********************************************************** -->
+
+
+    <!-- Footer START-->
+    <footer class="bg-light text-center ">
+        <!-- Grid container -->
+        <div class="container p-4">
 
 
 
+            <!-- Section: Text -->
+            <section class="mb-4">
+                <p>
+                    Special thanks to our Mr.Bharath Bhushan for giving us insights of model exporting and building
+                    responsive
+                    User Interface ,
+                </p>
+            </section>
+            <!-- Section: Text -->
 
-
-
-
-
-    <!--************************************************************* -->
-    <!--*************************CARD GROUP START********************-->
-    <!--*************************************************************-->
-
-    <div class="row  align-content-center" style="background-color: #2E5266;padding: 10%;">
-        <div class="col">
-            <div class="card  shadow-lg" style="width: 18rem; background-color: #6E8898;">
-                <img src="{{url_for('static',filename='dataset.png')}}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Dataset</h5>
-                    <p class="card-text">The dataset is published by IRTC(Indian Railway Catering anf Tourism
-                        Corporation)</p>
-                    <a href="#" class="btn btn-primary container-fluid">Know More</a>
-                </div>
-            </div>
 
         </div>
-        <div class="col">
-            <div class="card  shadow-lg" style="width: 18rem; background-color: #6E8898; ">
-                <img src="{{url_for('static',filename='problemStatement.png')}}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Problem Statememt</h5>
-                    <p class="card-text">The main aim is to predict the Fare ticket based on the various factors such as
-                        duration , travel class etc.</p>
-                    <a href="#" class="btn btn-primary container-fluid">Details</a>
-                </div>
-            </div>
+        <!-- Grid container -->
+
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+            © 2023 Copyright: Abhijith & Hithesh
 
         </div>
-        <div class="col">
-            <div class="card  shadow-lg" style="width: 18rem; background-color: #6E8898; ">
-                <img src="{{url_for('static',filename='research.png')}}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Research Papers</h5>
-                    <p class="card-text">Research Papers on Regression models for predictions have been explored and
-                        analysed</p>
-                    <a href="#" class="btn btn-primary container-fluid">View Papers</a>
-                </div>
-            </div>
+        <!-- Copyright -->
 
-        </div>
-        <div class="col">
-            <div class="card  shadow-lg" style="width: 18rem; background-color: #6E8898; ">
-                <img src="{{url_for('static',filename='demo.png')}}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Live Demo</h5>
-                    <p class="card-text"> A quick demo of the project where the user can predict fare price based on
-                        input features</p>
-                    <a href="#demo" class="btn btn-success container-fluid">Run</a>
-                </div>
-            </div>
-
-        </div>
-    </div>
-    <!--********************************************************** -->
-    <!--*************************CARD GROUP END********************-->
-    <!--********************************************************** -->
+    </footer>
+    <!-- Footer END -->
 
 
 
 
 
+    <!-- End your project here-->
 
-
-
-    <!--********************************************************** -->
-    <!--****************************DEMO START******************** -->
-    <!--********************************************************** -->
-
-    <div id="demo">
-
-        <form class="row" method="post">
-            <div class="col-6" style="background-color:  rgb(116, 87, 35);display: inline;">
-                <label class="container-fluid" for="CateringService">Catering Service</label>
-                <select id="CateringService" name="CateringService" class="form-control form-control-lg">
-                    <option>--SELECT--</option>
-                    <option>True</option>
-                    <option>False</option>
-                </select>
-            </div>
-            <div class="col-6 ">
-                <label class="container-fluid" for="DynamicFare">Dynamic Fare</label>
-                <select id="DynamicFare" name="DynamicFare" class="form-control form-control-lg">
-                    <option>--SELECT--</option>
-                    <option>True</option>
-                    <option>False</option>
-                </select>
-            </div>
-            <div class="col-6">
-                <label class="container-fluid" for="distance">Distance</label>
-
-                <div class="input-group">
-                    <span class="input-group-text">Distance (Km)</span>
-                    <input id="distance" name="distance" type="text" class="form-control" placeholder="Enter the Distance">
-                </div>
-            </div>
-
-            <div class="col-6">
-                <label class="container-fluid" for="duration">Duration</label>
-
-                <div class="input-group">
-                    <span class="input-group-text">Duration (minutes)</span>
-                    <input id="duration" name="duration" type="text" class="form-control" placeholder="Enter the Distance">
-                </div>
-            </div>
-
-
-            <input type="radio" class="btn-check" name="options" id="1a" autocomplete="off" value="1a">
-            <label style="margin: 3% ;width: 180px; display: inline;" class="btn btn-secondary" for="1a">1A</label>
-
-            <input type="radio" class="btn-check" name="options" id="2a" autocomplete="off" value="2a">
-            <label style="margin: 3% ;width: 180px;display: inline;" class="btn btn-secondary" for="2a">2A</label>
-            <input type="radio" class="btn-check" name="options" id="2s" autocomplete="off" value="2s">
-            <label style="margin: 3% ;width: 180px; display: inline;" class="btn btn-secondary" for="2s">2S</label>
-
-            <input type="radio" class="btn-check" name="options" id="3a" autocomplete="off" value="3a">
-            <label style="margin: 3% ;width: 180px;display: inline;" class="btn btn-secondary" for="3a">3A</label>
-            <input type="radio" class="btn-check" name="options" id="cc" autocomplete="off" value="cc">
-            <label style="margin: 3% ;width: 180px; display: inline;" class="btn btn-secondary" for="cc">CC</label>
-
-            <input type="radio" class="btn-check" name="options" id="sl" autocomplete="off" value="sl">
-            <label style="margin: 3% ;width: 180px;display: inline;" class="btn btn-secondary" for="sl">SL</label>
-
-            <button type="submit"  class="btn btn-primary">SUBMIT</button>
-            <span class="alert"> The expected Fare :: {{span}} </span>
-        </form>
-    </div>
-
-
-    <!--********************************************************** -->
-    <!--****************************DEMO END********************** -->
-    <!--********************************************************** -->
-
-
-
+    <!-- MDB -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/mdb.umd.min.js' )}}"></script>
+    <!-- Custom scripts -->
+    <script type="text/javascript"></script>
 </body>
 
 </html>

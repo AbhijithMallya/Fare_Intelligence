@@ -44,7 +44,7 @@ def home():
         input_features_reshaped = input_features.reshape(1, -1)
         result = model.predict(input_features_reshaped)
         print( "Predicted Fare : ",result)
-
+        result = str("The Predicted Fare :: "+ str(result))
         
         return render_template('index.html',span =result )
 
@@ -52,6 +52,12 @@ def home():
    
     return render_template('index.html')
 
-
+#Development Server
 if __name__ == '__main__':
-    app.run(debug=True)
+   app.run(debug=True)
+
+
+#Production Server
+# if __name__ == "__main__":
+#     app.run(host="0.0.0.0", port=5000 )    
+
