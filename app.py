@@ -27,12 +27,11 @@ def home():
 
         # Here, you can perform any logic to handle the form data
         # For now, let's print the values to the console
-        print(f'Catering Service: {catering_service}')
-        print(f'Dynamic Fare: {dynamic_fare}')
-        print(f'Distance: {distance}')
-        print(f'Duration: {duration}')
-        print(f'Train Class: {train_class}')
-
+        print('Catering Service: ',catering_service)
+        print('Dynamic Fare: ',dynamic_fare)
+        print('Distance: ',distance)
+        print('Duration: ',duration)
+        print('Train Class: ',train_class)
         model = pickle.load(open('GradientBoostingRegressor.pkl', 'rb'))
         print("Model loaded successfully")
 
